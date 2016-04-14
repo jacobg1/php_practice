@@ -27,6 +27,7 @@ if(isset($_POST["do_what"])){
 <html>
   <head>
     <title>Phpone Book</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Phpone Book</h1>
