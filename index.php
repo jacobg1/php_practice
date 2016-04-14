@@ -1,3 +1,20 @@
+<?php
+
+$entryFile = "entries.json";
+
+if(file_exists($entryFile)){
+  $entries = json_decode(file_get_contents($entryFile), true);
+}else{
+  $entries = [];
+}
+
+if(isset($_POST["entry"])){
+  $entry = $_POST["entry"];
+  $entries[$entry["name"]] = $entry;
+  file_put_contents($entryFile, json_encode($entries));
+}
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,9 +26,7 @@
     <pre>
 <?php
 
-if(isset($_POST["entry"])){
-  print_r($_POST["entry"]);
-}
+print_r($entries);
 
 ?>
     </pre>
