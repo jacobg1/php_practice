@@ -22,14 +22,17 @@ if(isset($_POST["entry"])){
   </head>
   <body>
     <h1>Phpone Book</h1>
-    <h2>New Entry</h2>
-    <pre>
 <?php
 
-print_r($entries);
+foreach($entries as $entry){
+  echo <<<HTML
+    <h2>{$entry["name"]}</h2>
+    <p>{$entry["number"]}</p>
+HTML;
+}
 
 ?>
-    </pre>
+    <h2>New Entry</h2>
     <form action="#" method="POST">
       <input type="text" name="entry[number]" placeholder="(555)867-5309" />
       <input type="text" name="entry[name]" placeholder="John D. Smith" />
