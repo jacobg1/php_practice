@@ -36,3 +36,22 @@ Try to keep everything in one `index.php` file!
 
 Add code such that you don't get that "Confirm resubmission" alert after creating or deleting an entry.
 
+# Hints
+
+These are all the functions I used to make the solution. Your solution may be different.
+
+```
+file_exists
+file_get_contents
+file_put_contents
+json_decode
+json_encode
+isset
+unset
+strtolower
+header
+echo
+```
+
+Also useful: PHP's ["heredocs"](http://stackoverflow.com/a/9687483/2053389).
+
