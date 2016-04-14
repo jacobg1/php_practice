@@ -19,6 +19,7 @@ if(isset($_POST["do_what"])){
     }
   }
   file_put_contents($entryFile, json_encode($entries));
+  header("Location: #");
 }
 
 ?>
