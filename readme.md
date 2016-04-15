@@ -55,3 +55,11 @@ echo
 
 Also useful: PHP's ["heredocs"](http://stackoverflow.com/a/9687483/2053389).
 
+To write to and read from a JSON file, you should always follow this sequence of steps:
+
+1. Get the JSON file's contents
+- Decode the JSON file's contents to an array
+- Modify the array
+- Encode the array as JSON
+- Put the encoded array in the JSON file *without appending*
+
