@@ -4,38 +4,6 @@ Create a little phone book app using PHP!
 
 It will show a list of entries, each of which has a name and a number. Users will be able to add and delete entries.
 
-## Commit 1
-
-Create `index.php`, and put all the boilerplate HTML in it along with a line of PHP that prints out the word "test".
-
-## Commit 2
-
-Create a form that POSTs to `index.php`, containing the data necessary to create a new entry. Verify the data is being POSTed correctly using `$_POST`.
-
-## Commit 3
-
-Add code such that if `entries.json` exists it is loaded and parsed into an array.
-
-Then, add code such that the POSTed data is pushed into that array.
-
-Finally, encode the array and save it to `entries.json`.
-
-## Commit 4
-
-Make all the entries show up on the page using valid HTML.
-
-## Commit 5
-
-Create a form for each entry that, when submitted, deletes that entry from `entries.json`.
-
-Remember: forms can only GET or POST. How else could you "fake" it?
-
-Try to keep everything in one `index.php` file!
-
-## Commit 6
-
-Add code such that you don't get that "Confirm resubmission" alert after creating or deleting an entry.
-
 # Hints
 
 These are all the functions I used to make the solution. Your solution may be different.
@@ -63,3 +31,29 @@ To write to and read from a JSON file, you should always follow this sequence of
 - Encode the array as JSON
 - Put the encoded array in the JSON file *without appending*
 
+# If you're not sure how to start
+
+You might try following this sequence of commits.
+
+1. Make sure PHP works
+  - Turn `index.html` into `index.php`
+  - Add a line of PHP so that it prints out the word "test"
+- Create some sample data
+  - Create an `entries.json` file
+  - In it, put an array of entries where each consists of a name and a phone number
+  - Validate your JSON with (JSONLint)[http://www.jsonlint.com]
+- Load the sample data
+  - Use PHP to read `entries.json` and display it
+- Display the entries
+  - Make each entry show up on the page like the example (Jenny Jennyson)
+- Add a "New Entry" form
+  - It should have a field for the name and a field for the phone number
+  - It should POST to `index.php`
+  - Verify the data is being POSTed correctly using `$_POST`
+- Save the new entries
+  - Push the POSTed data into the array of entries
+  - Overwrite `entries.json` with the new array, making sure to encode it as JSON
+- Activate the "delete" buttons
+  - These should also POST to `index.php`
+  - How can you make PHP differentiate between the POST requests for creating and the POST requests for deleting?
+  - This should remove an element from the array of entries and then save the array again
