@@ -1,4 +1,17 @@
+<?php
 
+  $entryFile = "entries.json";
+
+  if(file_exists($entryFile)) {
+    $entries = json_decode(file_get_contents($entryFile), true);
+  } else {
+    $entries = [];
+  }
+
+  if (isset($_POST["do_what"])) {
+    $do_what = strtolower($_POST["do_what"])
+  }
+ ?>
 
 <!DOCTYPE html>
 <html>
